@@ -18,7 +18,7 @@ namespace Services
             CreateMap<Action, ActionDTO>().ReverseMap();
             CreateMap<ActionType, ActionTypeDTO>().ReverseMap();
             CreateMap<Permission, PermissionDTO>().ReverseMap();
-            CreateMap<Picture, PictureDTO>().ReverseMap();
+            CreateMap<Picture, PictureDTO>().ReverseMap(); 
         }
     }
 }
