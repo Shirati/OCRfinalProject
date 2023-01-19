@@ -8,10 +8,10 @@ namespace Services
 {
     public interface IService<T>
     {
-        public T GetById(int id);
-        public List<T> GetAll();
-        public T Add(T entity);
-        public T Update(T entity);
-        public void Delete(int id);
+        public Task<T >GetById(int id);
+        public Task< List<T> >GetAll();
+        public Task<T> Add(T entity);
+        public Task<T> Update(T entity);
+        public Task Delete(int id);
     }
 }
