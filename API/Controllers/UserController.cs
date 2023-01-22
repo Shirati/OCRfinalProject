@@ -44,7 +44,7 @@ namespace API.Controllers
         {
             UserDTO newOne = new UserDTO();
             newOne.PermissionId = postModel.permissionId;
-            newOne.AccountId = postModel.accountId;
+            newOne.AccountId = postModel.accountId; 
             newOne.FirstName = postModel.firstName;
             newOne.LastName = postModel.lastName;
             newOne.Email = postModel.email;
