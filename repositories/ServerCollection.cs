@@ -21,5 +21,24 @@ namespace repositories
             service.AddScoped<Ientity<Permission>, PermissionRepository>();
 
         }
+        public static string ToString<T>(this T obj)
+        {
+            string str = "";
+            foreach (var item in obj.GetType().GetProperties())
+            {
+
+                if (item.PropertyType.IsArray)
+                {
+                    str += item.Name + ":";
+                    var q = item.GetValue(obj);
+                    string s = String.Join(',', q as string[]);
+                    str += "\n" + s;
+                }
+                else str += item.Name + ":" + item?.GetValue(obj) + ",";
+            }
+            return str.Remove(str.Length - 1);
+        }
     }
+
 }
+

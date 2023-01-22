@@ -11,5 +11,6 @@ namespace common.DTOs
         public int ActionTypeId { get; set; }
 
         public string? ActionTypeName { get; set; }
+       
     }
 }

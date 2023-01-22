@@ -11,5 +11,6 @@ namespace common.DTOs
         public int PermissionId { get; set; }
 
         public string? PremissionName { get; set; }
+      
     }
 }

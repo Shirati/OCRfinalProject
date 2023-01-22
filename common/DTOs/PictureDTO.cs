@@ -15,5 +15,7 @@ namespace common.DTOs
         public string? SourceFileUrl { get; set; }
 
         public string? ResultFileUrl { get; set; }
+       
     }
+
 }

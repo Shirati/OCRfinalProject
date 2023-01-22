@@ -42,15 +42,33 @@ namespace API.Controllers
         [HttpPost]
         public async Task<UserDTO> Post([FromBody] UserModel postModel)
         {
-            throw new NotImplementedException();
+            UserDTO newOne = new UserDTO();
+            newOne.PermissionId = postModel.permissionId;
+            newOne.AccountId = postModel.accountId;
+            newOne.FirstName = postModel.firstName;
+            newOne.LastName = postModel.lastName;
+            newOne.Email = postModel.email;
+            newOne.Password = postModel.password;
+            newOne.Ip = postModel.ip;
+            newOne.NumFreeTries = postModel.numFreeTries;
+            return await _user.Add(newOne);
         }
 
         // PUT api/<ActionController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<UserDTO> Put([FromBody] UserModel postModel)
         {
-            throw new NotImplementedException();
-
+            UserDTO newOne = new UserDTO();
+            newOne.UserId = postModel.userId;
+            newOne.PermissionId = postModel.permissionId;
+            newOne.AccountId = postModel.accountId;
+            newOne.FirstName = postModel.firstName;
+            newOne.LastName = postModel.lastName;
+            newOne.Email = postModel.email;
+            newOne.Password = postModel.password;
+            newOne.Ip = postModel.ip;
+            newOne.NumFreeTries = postModel.numFreeTries;
+            return await _user.Update(newOne);
         }
 
         // DELETE api/<ActionController>/5

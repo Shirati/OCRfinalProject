@@ -41,15 +41,19 @@ namespace API.Controllers
         [HttpPost]
         public async Task<ActionTypeDTO> Post([FromBody] ActionTypeModel postModel)
         {
-            throw new NotImplementedException();
+            ActionTypeDTO newOne = new ActionTypeDTO();
+            newOne.ActionTypeName = postModel.actionTypeName;
+            return await _actionType.Add(newOne);
         }
 
         // PUT api/<ActionController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<ActionTypeDTO> Put([FromBody] ActionTypeModel postModel)
         {
-            throw new NotImplementedException();
-
+            ActionTypeDTO newOne = new ActionTypeDTO();
+            newOne.ActionTypeId = postModel.actionTypeId;
+            newOne.ActionTypeName = postModel.actionTypeName;
+            return await _actionType.Update(newOne);
         }
 
         // DELETE api/<ActionController>/5

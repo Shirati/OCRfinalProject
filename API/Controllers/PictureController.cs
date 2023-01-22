@@ -40,14 +40,25 @@ namespace API.Controllers
         [HttpPost]
         public async Task<PictureDTO> Post([FromBody] PictureModel postModel)
         {
-            throw new NotImplementedException();
+            PictureDTO newOne = new PictureDTO();
+            newOne.ActionId = postModel.actionId;
+            newOne.SourceFileUrl = postModel.sourceFileUrl;
+            newOne.ResultFileUrl = postModel.resultFileUrl;
+            return await _picture.Add(newOne);
+
         }
 
         // PUT api/<ActionController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<PictureDTO> Put([FromBody] PictureModel postModel)
         {
-            throw new NotImplementedException();
+
+            PictureDTO newOne = new PictureDTO();
+            newOne.PictureId = postModel.pictureId;
+            newOne.ActionId = postModel.actionId;
+            newOne.SourceFileUrl=postModel.sourceFileUrl;
+            newOne.ResultFileUrl = postModel.resultFileUrl;
+            return await _picture.Update(newOne);
 
         }
 

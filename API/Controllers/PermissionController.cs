@@ -1,6 +1,7 @@
 ﻿using API.models;
 using common.DTOs;
 using Microsoft.AspNetCore.Mvc;
+using repositories.entities;
 using repositories.interfaces;
 using Services;
 using System.Data;
@@ -39,14 +40,19 @@ namespace API.Controllers
         [HttpPost]
         public async Task<PermissionDTO> Post([FromBody] PermissionModel postModel)
         {
-            throw new NotImplementedException();
+            PermissionDTO newOne = new PermissionDTO();
+            newOne.PremissionName = postModel.premissionName;
+            return await _permission.Add(newOne);
         }
 
         // PUT api/<ActionController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public async Task<PermissionDTO> Put([FromBody] PermissionModel postModel)
         {
-            throw new NotImplementedException();
+            PermissionDTO newOne = new PermissionDTO();
+            newOne.PermissionId = postModel.permissionId;
+            newOne.PremissionName = postModel.premissionName;
+            return await _permission.Update(newOne);
 
         }
 

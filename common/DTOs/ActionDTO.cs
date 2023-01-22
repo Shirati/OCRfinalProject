@@ -17,5 +17,6 @@ namespace common.DTOs
         public int? PaymentId { get; set; }
 
         public bool? IsSucceeded { get; set; }
+
     }
 }
