@@ -42,7 +42,7 @@ namespace repositories.repositories
 
         public async Task<ActionType> Update(ActionType entity)
         {
-            Delete(entity.ActionTypeId);
+            Delete(entity.ActionTypeId); 
             return await Add(entity);
         }
     }
