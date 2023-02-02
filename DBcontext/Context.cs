@@ -6,22 +6,19 @@ namespace DBcontext
 {
     public class Context : DbContext, IContext
     {
-        public DbSet<User> users { get; set; }
-        public DbSet<Picture> pictures { get; set; }
-        public DbSet<repositories.entities.Action> actions { get; set; }
-        public DbSet<ActionType> actionTypes { get; set; }
-        public DbSet<Permission> permissions { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Picture> Pictures { get; set; }
+        public DbSet<repositories.entities.Action> Actions { get; set; }
+
+        public DbSet<ActionType> ActionTypes { get; set; }
+        public DbSet<Permission> Permissions { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog='----------------------- shiratiHodRacheliBenpoFinalProject';Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+            optionsBuilder.UseSqlServer(@"Data Source=sqlsrv;Initial Catalog='----------------------- shiratiHodRacheliBenpoFinalProject';Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         }
 
 
-        Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken))
-        {
-           throw new NotImplementedException();
-        }
 
 
     }

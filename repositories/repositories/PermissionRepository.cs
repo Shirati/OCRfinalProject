@@ -19,25 +19,25 @@ namespace repositories.repositories
         }
         public async Task<Permission> Add(Permission entity)
         {
-            EntityEntry<Permission> newEntity = _cotext.permissions.Add(entity);
+            EntityEntry<Permission> newEntity = _cotext.Permissions.Add(entity);
             await _cotext.SaveChangesAsync();
             return newEntity.Entity;
         }
 
         public async Task Delete(int id)
         {
-            _cotext.permissions.Remove(_cotext.permissions.Single(a => a.PermissionId == id));
+            _cotext.Permissions.Remove(_cotext.Permissions.Single(a => a.PermissionId == id));
             await _cotext.SaveChangesAsync();
         }
 
         public async Task<List<Permission>> GetAll()
         {
-            return await _cotext.permissions.ToListAsync();
+            return await _cotext.Permissions.ToListAsync();
         }
 
         public async Task<Permission> GetById(int id)
         {
-            return await _cotext.permissions.SingleAsync(a => a.PermissionId == id);
+            return await _cotext.Permissions.SingleAsync(a => a.PermissionId == id);
         }
 
         public async Task<Permission> Update(Permission entity)

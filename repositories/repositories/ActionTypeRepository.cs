@@ -19,25 +19,25 @@ namespace repositories.repositories
         }
         public async Task<ActionType> Add(ActionType entity)
         {
-            EntityEntry<ActionType> newEntity = _cotext.actionTypes.Add(entity);
+            EntityEntry<ActionType> newEntity = _cotext.ActionTypes.Add(entity);
             await _cotext.SaveChangesAsync();
             return newEntity.Entity;
         }
 
         public async Task Delete(int id)
         {
-            _cotext.actionTypes.Remove(_cotext.actionTypes.Single(a => a.ActionTypeId == id));
+            _cotext.ActionTypes.Remove(_cotext.ActionTypes.Single(a => a.ActionTypeId == id));
             await _cotext.SaveChangesAsync();
         }
 
         public async Task<List<ActionType>> GetAll()
         {
-            return await _cotext.actionTypes.ToListAsync();
+            return await _cotext.ActionTypes.ToListAsync();
         }
 
         public async Task<ActionType> GetById(int id)
         {
-            return await _cotext.actionTypes.SingleAsync(a => a.ActionTypeId == id);
+            return await _cotext.ActionTypes.SingleAsync(a => a.ActionTypeId == id);
         }
 
         public async Task<ActionType> Update(ActionType entity)

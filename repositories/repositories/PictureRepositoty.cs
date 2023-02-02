@@ -19,25 +19,25 @@ namespace repositories.repositories
         }
         public async Task<Picture> Add(Picture entity)
         {
-            EntityEntry<Picture> newEntity= _cotext.pictures.Add(entity);
+            EntityEntry<Picture> newEntity= _cotext.Pictures.Add(entity);
             await _cotext.SaveChangesAsync();
             return newEntity.Entity;
         }
 
         public async Task Delete(int id)
         {
-            _cotext.pictures.Remove(_cotext.pictures.Single(a => a.PictureId == id));
+            _cotext.Pictures.Remove(_cotext.Pictures.Single(a => a.PictureId == id));
             await _cotext.SaveChangesAsync();
         }
 
         public async Task<List<Picture>> GetAll()
         {
-            return await _cotext.pictures.ToListAsync();
+            return await _cotext.Pictures.ToListAsync();
         }
 
         public async Task<Picture> GetById(int id)
         {
-            return await _cotext.pictures.SingleAsync(a => a.PictureId == id);
+            return await _cotext.Pictures.SingleAsync(a => a.PictureId == id);
         }
 
         public async Task<Picture> Update(Picture entity)

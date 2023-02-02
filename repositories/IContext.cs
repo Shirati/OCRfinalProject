@@ -11,11 +11,11 @@ namespace repositories
 {
     public interface IContext
     {
-        public DbSet<User> users { get; set; }
-        public DbSet<Picture> pictures { get; set; }
-        public DbSet<Action> actions { get; set; }
-        public DbSet<ActionType> actionTypes { get; set; }
-        public DbSet<Permission> permissions { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Picture> Pictures { get; set; }
+        public DbSet<Action> Actions { get; set; }
+        public DbSet<ActionType> ActionTypes { get; set; }
+        public DbSet<Permission> Permissions { get; set; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken));
     }

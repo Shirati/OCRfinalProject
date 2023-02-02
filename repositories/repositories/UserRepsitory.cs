@@ -19,25 +19,25 @@ namespace repositories.repositories
         }
         public async Task<User> Add(User entity)
         {
-            EntityEntry<User> newUser = _cotext.users.Add(entity);
+            EntityEntry<User> newUser = _cotext.Users.Add(entity);
             await _cotext.SaveChangesAsync();
             return newUser.Entity;
         }
 
         public async Task Delete(int id)
         {
-            _cotext.users.Remove(_cotext.users.Single(a => a.UserId == id));
+            _cotext.Users.Remove(_cotext.Users.Single(a => a.UserId == id));
             await _cotext.SaveChangesAsync();
         }
 
         public async Task<List<User>> GetAll()
         {
-            return await _cotext.users.ToListAsync();
+            return await _cotext.Users.ToListAsync();
         }
 
         public async Task<User> GetById(int id)
         {
-            return await _cotext.users.SingleAsync(a => a.UserId == id);
+            return await _cotext.Users.SingleAsync(a => a.UserId == id);
         }
 
         public async Task<User> Update(User entity)
